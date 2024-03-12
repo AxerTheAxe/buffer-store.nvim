@@ -1,11 +1,11 @@
-local M = {}
+local cursor_position = {}
 
 ---@diagnostic disable: inject-field
-function M.save_cursor()
+function cursor_position.save_cursor()
     vim.b.cursor_position = vim.fn.winsaveview()
 end
 
-function M.load_cursor()
+function cursor_position.load_cursor()
     if vim.b.cursor_position then
         vim.fn.winrestview(vim.b.cursor_position)
     end
@@ -20,4 +20,4 @@ autocmd BufEnter * lua require("buffer_store.cursor_position").load_cursor()
 augroup END
 ]]
 
-return M
+return cursor_position

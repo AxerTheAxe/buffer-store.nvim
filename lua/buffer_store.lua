@@ -1,9 +1,9 @@
 local config = require("buffer_store.config")
 
-local M = {}
+local buffer_store = {}
 
 ---@diagnostic disable: param-type-mismatch
-function M.setup(user_options)
+function buffer_store.setup(user_options)
     config.merge_options(user_options or {})
 
     -- Unload modules
@@ -24,4 +24,4 @@ function M.setup(user_options)
     end
 end
 
-return M
+return buffer_store

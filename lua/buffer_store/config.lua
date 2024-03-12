@@ -1,4 +1,4 @@
-local M = {}
+local config = {}
 
 -- Default configuration
 local options = {
@@ -12,11 +12,11 @@ local options = {
     }
 }
 
-function M.merge_options(new_options)
+function config.merge_options(new_options)
     options = vim.tbl_deep_extend("force", options, new_options)
 end
 
-function M.get_option(option)
+function config.get_option(option)
     local keys = {}
     -- Regex for '.'
     for key in string.gmatch(option, "[^%.]+") do
@@ -33,4 +33,4 @@ function M.get_option(option)
     return result
 end
 
-return M
+return config
