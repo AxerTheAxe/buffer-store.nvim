@@ -15,19 +15,20 @@ Stores various buffer related information in Neovim.
 
 The default configuration is as such:
 ```lua
-require("buffer_store").setup {
+require("buffer_store").setup({
     cursor_position = {
         -- Store cursor position
-        enabled = false
+        enabled = false,
     },
 
     no_name = {
         -- Store no name buffer directories
         enabled = false,
+
         -- Print the new working directory when creating a new no name buffer
-        pwd = true
-    }
-}
+        pwd = true,
+    },
+})
 ```
 
 ## Contributing
