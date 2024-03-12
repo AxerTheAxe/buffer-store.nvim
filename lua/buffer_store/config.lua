@@ -3,13 +3,14 @@ local config = {}
 -- Default configuration
 local options = {
     cursor_position = {
-        enabled = false
+        enabled = false,
     },
 
     no_name = {
         enabled = false,
-        pwd = true
-    }
+
+        pwd = true,
+    },
 }
 
 function config.merge_options(new_options)
